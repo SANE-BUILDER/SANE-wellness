@@ -1,0 +1,165 @@
+/* THEME VARIABLES */
+#game-container {
+  --accent: #B7E4C7;      /* mint */
+  --btn1: #52B788;        /* button base */
+  --btn2: #40916C;        /* button depth */
+  --btnHover1: #6FD3A3;   /* hover glow */
+  --btnHover2: #52B788;
+}
+
+/* THEMES (subtle but bright accents) */
+.theme-awareness {
+  --accent: #B7E4C7;      /* mint */
+  --btn1: #52B788;
+  --btn2: #2D6A4F;
+  --btnHover1: #7AE6B9;
+  --btnHover2: #52B788;
+}
+
+.theme-comparison {
+  --accent: #AEE6FF;      /* cool sky-blue accent */
+  --btn1: #4CAF8F;        /* teal-green */
+  --btn2: #1F7A5C;
+  --btnHover1: #7BE7C7;
+  --btnHover2: #4CAF8F;
+}
+
+.theme-compassion {
+  --accent: #FFD6A5;      /* warm peach accent */
+  --btn1: #49B36B;        /* brighter green */
+  --btn2: #1E7A3A;
+  --btnHover1: #8AF0A7;
+  --btnHover2: #49B36B;
+}
+
+.theme-integration {
+  --accent: #E9C7FF;      /* soft lavender accent */
+  --btn1: #56C596;
+  --btn2: #2D8A68;
+  --btnHover1: #8BF3CA;
+  --btnHover2: #56C596;
+}
+
+/* GLOBAL */
+body {
+  font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: #F5F7F4; /* calm warm off-white */
+  color: #2B2B2B;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* GAME CONTAINER */
+#game-container {
+  background: #1F4D3A; /* deep forest green */
+  padding: 40px;
+  border-radius: 24px;
+  width: 92%;
+  max-width: 620px;
+  box-shadow:
+    0 12px 35px rgba(0, 0, 0, 0.18),
+    inset 0 0 0 1px rgba(183, 228, 199, 0.15);
+  backdrop-filter: blur(8px);
+  text-align: center;
+  animation: fadeIn 0.8s ease;
+  color: #FFFFFF;
+}
+
+/* TITLE */
+#game-container h1 {
+  margin: 0 0 18px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+
+/* SECTION TITLE */
+#section-title {
+  font-size: 13px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  margin-bottom: 18px;
+  color: var(--accent);
+}
+
+/* GAME TEXT */
+#game-text {
+  margin-bottom: 22px;
+  font-size: 18.5px;
+  line-height: 1.75;
+  opacity: 0.96;
+  white-space: pre-line;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  padding: 18px 18px;
+  border-radius: 16px;
+  transition: opacity 0.35s ease;
+}
+
+/* BUTTONS */
+button {
+  background: linear-gradient(135deg, var(--btn1), var(--btn2));
+  color: #FFFFFF;
+  border: none;
+  padding: 14px 22px;
+  margin: 8px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 15.5px;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+button:hover {
+  background: linear-gradient(135deg, var(--btnHover1), var(--btnHover2));
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28);
+}
+
+/* Button press feedback */
+button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22);
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(76, 175, 143, 0.25), 0 6px 16px rgba(0, 0, 0, 0.22);
+}
+
+/* CHOICES */
+#choices {
+  margin-top: 8px;
+}
+
+#choices button {
+  width: 100%;
+  text-align: left;
+  display: block;
+}
+
+#choices button::before {
+  content: "→";
+  margin-right: 10px;
+  opacity: 0.9;
+}
+
+#nextBtn {
+  width: 100%;
+}
+
+/* REPLAY BUTTON – gentle emphasis */
+#choices button {
+  margin-top: 12px;
+}
+
+/* FADE */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
