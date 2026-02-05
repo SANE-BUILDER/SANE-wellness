@@ -3,8 +3,19 @@ const choicesDiv = document.getElementById('choices');
 const nextBtn = document.getElementById('nextBtn');
 const sectionTitle = document.getElementById('section-title');
 const gameContainer = document.getElementById('game-container');
+const chapterCount = document.getElementById('chapter-count');
+const chapterTotal = document.getElementById('chapter-total');
 
 let step = 0;
+
+// HUD button handlers
+document.getElementById('btn-home')?.addEventListener('click', () => {
+  window.location.href = '/';
+});
+
+document.getElementById('btn-restart')?.addEventListener('click', () => {
+  replayGame();
+});
 
 // Insight tracking (empathy skills)
 let insightScore = 0;
@@ -79,6 +90,10 @@ function startStep() {
   gameText.style.opacity = 0;
 
   setTimeout(() => {
+    // Update HUD
+    if (chapterCount) chapterCount.textContent = step + 1;
+    if (chapterTotal) chapterTotal.textContent = steps.length;
+
     const sec = sections[step];
     sectionTitle.innerText = "Empathy - " + sec;
     gameContainer.className = themeBySection[sec] || "theme-awareness";
